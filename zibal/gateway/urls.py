@@ -1,13 +1,15 @@
-from django.urls import path
+from django.urls import path, re_path
 
-from . import views
+from . import WebServiceViews, APIviews
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('register', views.createUser, name='createUser'),
-    path('welcome', views.welcomeUser, name='welcomeUser'),
-    path('creategateway', views.creategateway, name='creategateway'),
-    path('payRequest', views.payRequest, name='payRequest'),
-    path('verifyPay', views.verifyPay, name='verifyPay'),
-
+    path('', APIviews.index, name='index'),
+    path('register', APIviews.createUser, name='createUser'),
+    path('welcome', APIviews.welcomeUser, name='welcomeUser'),
+    path('uploadImage', APIviews.uploadImage, name='uploadImage'),
+    path('creategateway', APIviews.creategateway, name='creategateway'),
+    path('payRequest', WebServiceViews.payRequest, name='payRequest'),
+    path('verifyPay', WebServiceViews.verifyPay, name='verifyPay'),
+    path('verify', WebServiceViews.verifyCallback, name='verifyCallback'),
+    re_path('start/(?P<id>[0-9]+)/$', WebServiceViews.start, name='start'),
 ]

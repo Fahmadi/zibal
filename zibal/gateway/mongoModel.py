@@ -1,3 +1,4 @@
+from django.db.models import UUIDField
 from mongoengine import StringField, Document, ReferenceField, IntField, BooleanField
 
 
@@ -19,3 +20,5 @@ class Transaction(Document):
     status = BooleanField(default=False)
     card_number = IntField(max_length=16, null=True)
     transId = IntField(max_length=16 , null=True)
+    zibalId = IntField(max_length=12)
+    mobile = IntField(max_length= 12)

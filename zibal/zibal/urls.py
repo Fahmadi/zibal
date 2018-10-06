@@ -21,5 +21,5 @@ urlpatterns = [
     path('gateway/', include('gateway.urls')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('ticket/', include('ticket.urls')),
-
+    path('', include('gateway.urls')),
 ]

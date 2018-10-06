@@ -70,7 +70,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR + 'zibal/gateway/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,7 +82,10 @@ TEMPLATES = [
         },
     },
 ]
-
+# Template directory setting
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates'),
+)
 WSGI_APPLICATION = 'zibal.wsgi.application'
 
 

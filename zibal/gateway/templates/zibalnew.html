@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<body  onload=document.getElementById('callback').submit()>
+
+    <form action="{{ callback_url }}"  method="POST" id="callback">
+        <input type="hidden" id="status" name="status" value={{ status }}>
+        <input type="hidden" id="zibalId" name="zibalId" value={{ zibalId  }}>
+        <input type="hidden" id="message" name="message" value={{ message }}>
+
+    </form>
+</body>
